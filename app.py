@@ -1,10 +1,13 @@
 from flask import Flask
+from flask_cors import CORS
 import requests
 import os
 
 port = int(os.environ.get('PORT', 5000))
 
 app = Flask(__name__)
+# CORS problem
+CORS(app)
 
 def getDate(raw_html):
     pattern_start = 'ประจำวันที่ <span id="DetailPlace_uc_goldprices1_lblAsTime"><b><font size="3">'
